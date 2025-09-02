@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router";
+import { HashRouter, Navigate, Route, Routes } from "react-router";
 
 import Home from "./pages/Home";
 import AppLayout from "./pages/AppLayout";
@@ -11,22 +11,24 @@ import UsageTutorial from "./pages/UsageTutorial";
 
 function App() {
   return (
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="app" element={<AppLayout />}>
-        <Route index element={<Navigate replace to="home" />} />
-        <Route path="home" element={<AppHome />} />
-        <Route path="home/film" element={<Film />} />
-        <Route path="category" element={<Category />} />
-        <Route path="history" element={<History />} />
-        <Route path="account">
-          <Route index element={<Navigate replace to="favorite" />} />
-          <Route path="favorite" element={<FavoriteItem />} />
-          <Route path="add-film" element={<FavoriteItem />} />
+    <HashRouter>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="app" element={<AppLayout />}>
+          <Route index element={<Navigate replace to="home" />} />
+          <Route path="home" element={<AppHome />} />
+          <Route path="home/film" element={<Film />} />
+          <Route path="category" element={<Category />} />
+          <Route path="history" element={<History />} />
+          <Route path="account">
+            <Route index element={<Navigate replace to="favorite" />} />
+            <Route path="favorite" element={<FavoriteItem />} />
+            <Route path="add-film" element={<FavoriteItem />} />
+          </Route>
         </Route>
-      </Route>
-      <Route path="app/usage-tutorial" element={<UsageTutorial />}></Route>
-    </Routes>
+        <Route path="app/usage-tutorial" element={<UsageTutorial />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
