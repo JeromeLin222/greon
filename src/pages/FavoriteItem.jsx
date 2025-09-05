@@ -1,5 +1,6 @@
 import arrowLeft from "../assets/images/icons/arrow-left.svg"
 import btnListMore from "../assets/images/icons/btn-list-more.svg"
+import btnAdd from "../assets/images/icons/add-btn.svg"
 import FavListVideoCover1 from "../assets/images/Personal_Page_Fav/FavListVideoCover_1.svg"
 import FavListVideoCover2 from "../assets/images/Personal_Page_Fav/FavListVideoCover_2.svg"
 import FavListVideoCover3 from "../assets/images/Personal_Page_Fav/FavListVideoCover_3.svg"
@@ -63,9 +64,10 @@ function FavoriteItem() {
             </div>
         </section>
         <section className="container">
-          <Button otherClass="text-center col-4">
-            <div className="create-play-list py-xl">
-              <p className="text-neutral-100 text-h6 font-bold">建立新播放清單</p>
+          <Button otherClass="col-4">
+            <div className="create-play-list py-xl flex items-center justify-center">
+              <img src={btnAdd} alt="add button" className="add-button-icon mr-m"/>
+              <p className="text-neutral-100 text-h6 font-bold"> 建立新播放清單</p>
             </div>
           </Button>
         </section>
