@@ -4,6 +4,8 @@ import FavListVideoCover1 from "../assets/images/Personal_Page_Fav/FavListVideoC
 import FavListVideoCover2 from "../assets/images/Personal_Page_Fav/FavListVideoCover_2.svg"
 import FavListVideoCover3 from "../assets/images/Personal_Page_Fav/FavListVideoCover_3.svg"
 import Button from "../ui/Button";
+import "./FavoriteItem.css";
+
 
 function FavoriteItem() {
   return (
@@ -17,7 +19,7 @@ function FavoriteItem() {
               <h1 className="text-h6 text-neutral-100">收藏片單</h1>
             </div>
           </div>
-        <section>
+        <section className="mb-m">
             <div className="container">
               <ul className="row gap-xs">
                 <li className="col-4 flex">
@@ -59,6 +61,13 @@ function FavoriteItem() {
 
               </ul>
             </div>
+        </section>
+        <section className="container">
+          <Button otherClass="text-center col-4">
+            <div className="create-play-list py-xl">
+              <p className="text-neutral-100 text-h6 font-bold">建立新播放清單</p>
+            </div>
+          </Button>
         </section>
       </main>
     </>
