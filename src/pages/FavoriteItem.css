@@ -6,3 +6,9 @@
 .add-button-icon {
     width: 47px;
 }
+
+.tag {
+    bottom: 10px;
+    right: 10px;
+    border-radius: 4px;
+}
