@@ -18,3 +18,62 @@
     top: -1px;
     right: -1px;
 }
+
+.custom-dark-modal {
+    width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--neutral-800); /* neutral-900 */
+    border-radius: 4px;
+    box-shadow: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+    padding: var(--spacing-s) var(--spacing-m);
+    transition: all 0.5s;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1.5rem 0 0.5rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--neutral-100);
+    color: var(--neutral-100);
+    font-size: 1rem;
+    outline: none;
+    transition: border-bottom 0.3s ease;
+}
+
+.input-field:focus {
+    border-bottom: 1px solid var(--success-200);
+}
+
+.input-label {
+    position: absolute;
+    left: 0;
+    top: .5rem;
+    color: var(--neutral-0);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    transform-origin: left top;
+}
+
+/* 聚焦或有內容時的 label 動畫 */
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--neutral-200);
+    transform: translateY(-0.25rem);
+}
+
+/* placeholder 隱藏 */
+.input-field::placeholder {
+    color: transparent;
+}
