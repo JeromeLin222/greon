@@ -3,6 +3,13 @@ import { useParams, useLocation, useNavigate } from "react-router";
 import { useState } from "react";
 import Button from "../ui/Button";
 import arrowLeft from "../assets/images/icons/arrow-left.svg";
+import PlaylistDefaultCover from "../assets/images/Personal_Page_Fav_Cover/FavListVideoCover_2.svg"
+import playList from "../assets/images/icons/play-list.svg" 
+import addIcon from "../assets/images/icons/add-white.svg"
+import editIcon from "../assets/images/icons/edit.svg"
+
+import "./PlaylistDetail.css";
+
 
 function PlaylistDetail() {
   const { playlistName } = useParams();
@@ -18,41 +25,31 @@ function PlaylistDetail() {
     <>
       <main className="mt-app-header">
         <div className="container">
-          {/* 頁面標題 */}
-          <div className="flex items-center mb-l">
-            <Button otherClass="flex items-center mr-s" onClick={() => navigate('/app/account/favorite')}>
-              <img src={arrowLeft} alt="arrow left"/>
-            </Button>
-            <h1 className="text-h6 text-neutral-100">{decodedName}</h1>
-          </div>
-
-          {isNew && (
-            <div className="text-center py-xl mb-l">
-              <div className="bg-success-500 text-white p-4 rounded-lg mb-4">
-                <h2 className="text-lg font-bold mb-2">播放清單建立成功！</h2>
-                <p className="text-sm">「{decodedName}」已建立完成</p>
-              </div>
-              <p className="text-neutral-400">開始添加你喜歡的影片吧！</p>
-            </div>
-          )}
-
-          {videos.length === 0 ? (
-            <div className="text-center py-xl">
-              <div className="bg-neutral-800 rounded-lg p-8">
-                <p className="text-neutral-400 mb-4">這個播放清單還沒有影片</p>
-                <Button otherClass="bg-success-500 text-white px-6 py-3 rounded-full">
-                  瀏覽影片
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <div className="grid gap-4">
-              {videos.map((video, index) => (
-                <div key={index} className="bg-neutral-800 p-4 rounded-lg">
-                </div>
-              ))}
-            </div>
-          )}
+					<Button otherClass="flex items-center mr-s" onClick={() => navigate('/app/account/favorite')}>
+						<img src={arrowLeft} alt="arrow left"/>
+					</Button>
+					<div className="relative">
+						<img src={PlaylistDefaultCover} className="relative" alt="" />
+						<div className="tag p-xxs absolute flex items-center bg-neutral-900">
+							<img src={playList} alt="play list icon" style={{ width: '1rem', height: '1rem'}}/>
+							<span className="text-neutral-100 text-xs font-bold">0部影片</span>
+						</div>
+					</div>
+					<h1 className="text-h6 text-neutral-100 mb-s">{decodedName}</h1>
+					<div className="flex justify-end mb-xl">
+						<a href="#" className="mr-s">
+							<img src={addIcon} alt="add icon" />
+						</a>
+						<a href="#" className="">
+							<img src={editIcon} alt="add icon" />
+						</a>
+					</div>
+					<div className="text-center">
+						<Button btnStyle="primary" otherClass="btn-custom-padding mb-3xl">
+							<span className="font-bold">新增影片至清單</span>
+						</Button>
+						<p className="text-neutral-0 text-xl">目前尚無影片</p>
+					</div>
         </div>
       </main>
     </>
