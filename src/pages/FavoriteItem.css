@@ -12,3 +12,9 @@
     right: 10px;
     border-radius: 4px;
 }
+
+.vip-tag {
+    border-radius: 8px;
+    top: -1px;
+    right: -1px;
+}

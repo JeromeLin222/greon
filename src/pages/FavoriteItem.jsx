@@ -2,6 +2,7 @@ import arrowLeft from "../assets/images/icons/arrow-left.svg"
 import btnListMore from "../assets/images/icons/btn-list-more.svg"
 import btnAdd from "../assets/images/icons/add-btn.svg"
 import playList from "../assets/images/icons/play-list.svg" 
+import goldenCrown from "../assets/images/icons/crown-golden.svg"
 
 import FavListVideoCover1 from "../assets/images/Personal_Page_Fav/FavListVideoCover_1.svg"
 import FavListVideoCover2 from "../assets/images/Personal_Page_Fav/FavListVideoCover_2.svg"
@@ -93,7 +94,11 @@ function FavoriteItem() {
         </section>
         <section className="container">
           <Button otherClass="col-4">
-            <div className="create-play-list py-xl flex items-center justify-center">
+            <div className="create-play-list py-xl flex items-center justify-center relative">
+              <div className="vip-tag bg-success-200 py-xs px-s absolute flex items-center">
+                <img src={goldenCrown} alt="golden crown icon" className="mr-xxs"/>
+                <span className="font-bold text-s text-neutral-100">VIP</span>
+              </div>
               <img src={btnAdd} alt="add button" className="add-button-icon mr-m"/>
               <p className="text-neutral-100 text-h6 font-bold"> 建立新播放清單</p>
             </div>
