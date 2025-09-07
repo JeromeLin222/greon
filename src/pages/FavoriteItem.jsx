@@ -89,18 +89,18 @@ function CreatePlaylistForm({ onCloseModal }) {
 function PlaylistMenu({ onCloseModal }) {
   return(
     <div className="playlist-menu">
-      <div className="menu-item">
+      <Button otherClass="menu-item" onClick={onCloseModal}>
         <img src={menuEditIcon} alt="edit" />
         <span>編輯</span>
-      </div>
-      <div className="menu-item">
+      </Button>
+      <Button otherClass="menu-item" onClick={onCloseModal}>
         <img src={videoLibraryIcon} alt="add" />
         <span>新增</span>
-      </div>
-      <div className="menu-item">
+      </Button>
+      <Button otherClass="menu-item delete" onClick={onCloseModal}>
         <img src={removeIcon} alt="remove" />
         <span>刪除</span>
-      </div>
+      </Button>
     </div>
   )
 }
