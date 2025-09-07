@@ -1,0 +1,131 @@
+.create-play-list {
+    border: 1px solid var(--success-200);
+    border-radius: 8px;
+}
+
+.add-button-icon {
+    width: 47px;
+}
+
+.tag {
+    bottom: 10px;
+    right: 10px;
+    border-radius: 4px;
+}
+
+.vip-tag {
+    border-radius: 8px;
+    top: -1px;
+    right: -1px;
+}
+
+.custom-dark-modal {
+    width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--neutral-800); /* neutral-900 */
+    border-radius: 4px;
+    box-shadow: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+    padding: var(--spacing-s) var(--spacing-m);
+    transition: all 0.5s;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1.5rem 0 0.5rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--neutral-100);
+    color: var(--neutral-100);
+    font-size: 1rem;
+    outline: none;
+    transition: border-bottom 0.3s ease;
+}
+
+.input-field:focus {
+    border-bottom: 1px solid var(--success-200);
+}
+
+.input-label {
+    position: absolute;
+    left: 0;
+    top: .5rem;
+    color: var(--neutral-0);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    transform-origin: left top;
+}
+
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--neutral-200);
+    transform: translateY(-0.25rem);
+}
+
+
+.input-field::placeholder {
+    color: transparent;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.pill-rounded {
+    border-radius: 50px;
+}
+
+.btn-create.activate {
+    background-color: var(--success-200);
+    color: var(--neutral-0);
+}
+
+
+.bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    top: auto;
+    width: 90%;
+    max-width: 350px;
+    transform: translateX(-50%);
+    
+    /* 漸層背景 */
+    background: linear-gradient(180deg, #414141 0%, #121212 100%);
+    border-radius: 16px 16px 0 0;
+    padding: var(--spacing-l);
+    animation: slideUp 0.3s ease-out;
+    box-shadow: 
+        0 0 0 1px rgba(68, 164, 12, 0.5), /* 外層綠色光暈 */
+        0 8px 32px rgba(0, 0, 0, 0.4);
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-m) 0;
+    color: var(--neutral-100);
+    cursor: pointer;
+    gap: var(--spacing-s);
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.menu-item:last-child {
+    color: #ff4444;
+}
+
+.menu-item img {
+    width: 24px;
+    height: 24px;
+  }

@@ -50,7 +50,7 @@ function Window({
       <StyledModal ref={ref} styledModalCustomClass={styledModalCustomClass}>
         {needCloseBtn && (
           <Button onClick={close}>
-            <span className="material-symbols-rounded absolute close-btn-position">
+            <span className="material-symbols-rounded absolute close-btn-position text-neutral-100">
               close
             </span>
           </Button>
