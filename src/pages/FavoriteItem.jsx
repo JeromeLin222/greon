@@ -13,18 +13,49 @@ import Button from "../ui/Button";
 import "./FavoriteItem.css";
 
 import { useState } from "react";
+import { useNavigate } from "react-router"
 
 
 // 在同一個檔案中或另外創建
 function CreatePlaylistForm({ onCloseModal }) {
   const [isFocused, setIsFocused] = useState(false);
-  const [hasValue, setHasValue] = useState(false)
+  const [hasValue, setHasValue] = useState(false);
+  const [playlistName, setPlaylistName] = useState('');
+  const navigate = useNavigate();
+
 
   const handleFocus = () => setIsFocused(true);
   const handleBlur = (e) => {
     setIsFocused(false);
     setHasValue(e.target.value.length > 0);
   };
+  const handleChange = (e) => {
+    const value = e.target.value
+    setPlaylistName(value)
+    setHasValue(value.length > 0)
+  }
+  const handleSubmit = () => {
+    if (playlistName.trim()) {
+      const existingPlaylists = JSON.parse(localStorage.getItem('playlists') || '[]')
+      const newPlaylist = {
+        id: Date.now(),
+        name: playlistName.trim(),
+        videos: [],
+        createdAt: new Date().toISOString()
+      };
+
+      existingPlaylists.push(newPlaylist)
+      localStorage.setItem('playlists', JSON.stringify(existingPlaylists));
+
+      onCloseModal();
+
+      navigate(`/app/playlist/${encodeURIComponent(playlistName.trim())}`, {
+        state: { isNew: true }
+      })
+    }
+  }
+
+
 
 
   return (
@@ -36,22 +67,19 @@ function CreatePlaylistForm({ onCloseModal }) {
           placeholder=" " 
           className="input-field" 
           id="playlist-title"
-          onFocus = {handleFocus}
+          value={playlistName}
+          onFocus={handleFocus}
           onBlur={handleBlur}
-          onChange={(e) => setHasValue(e.target.value.length > 0)}
+          onChange={handleChange}
           />
         <label htmlFor="playlist-title" className="input-label" >
-          {(isFocused || hasValue) ? '標題' : '請輸入標題'}
+          {hasValue ? '' : (isFocused ? '標題' : '請輸入標題')}
         </label>
       </div>
-
-
-
-      <button 
-          type="button" 
-          onClick={onCloseModal}
-          className="flex-1 bg-neutral-600 text-white py-3 rounded-full font-bold"
-        ></button>
+      <div className="gap-m flex">
+        <Button otherClass="flex-1 bg-neutral-100 py-xs py-md-s pill-rounded" onClick={onCloseModal}>取消</Button>
+        <Button otherClass={`flex-1 bg-neutral-100 py-xs py-md-s pill-rounded btn-create ${(isFocused || hasValue) ? 'activate' : ''}`} onClick={handleSubmit} >建立</Button>
+      </div>
     </div>
   );
 }

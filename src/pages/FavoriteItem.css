@@ -64,7 +64,6 @@
     transform-origin: left top;
 }
 
-/* 聚焦或有內容時的 label 動畫 */
 .input-field:focus + .input-label,
 .input-field:not(:placeholder-shown) + .input-label {
     top: 0;
@@ -73,7 +72,20 @@
     transform: translateY(-0.25rem);
 }
 
-/* placeholder 隱藏 */
+
 .input-field::placeholder {
     color: transparent;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.pill-rounded {
+    border-radius: 50px;
+}
+
+.btn-create.activate {
+    background-color: var(--success-200);
+    color: var(--neutral-0);
 }

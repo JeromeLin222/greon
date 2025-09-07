@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import AppLayout from "./pages/AppLayout";
 import AppHome from "./pages/AppHome";
 import FavoriteItem from "./pages/FavoriteItem";
+import PlaylistDetail from "./pages/PlaylistDetail";
 import Film from "./pages/Film";
 import Category from "./pages/Category";
 import History from "./pages/History";
@@ -21,6 +22,7 @@ function App() {
           <Route path="home/film" element={<Film />} />
           <Route path="category" element={<Category />} />
           <Route path="history" element={<History />} />
+          <Route path="playlist/:playlistName" element={<PlaylistDetail />} />
           <Route path="account">
             <Route index element={<Navigate replace to="favorite" />} />
             <Route path="favorite" element={<FavoriteItem />} />
