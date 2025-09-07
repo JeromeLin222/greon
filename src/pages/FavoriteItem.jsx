@@ -3,6 +3,11 @@ import btnListMore from "../assets/images/icons/btn-list-more.svg"
 import btnAdd from "../assets/images/icons/add-btn.svg"
 import playList from "../assets/images/icons/play-list.svg" 
 import goldenCrown from "../assets/images/icons/crown-golden.svg"
+import menuEditIcon from "../assets/images/icons/menu-edit.svg"
+import videoLibraryIcon from "../assets/images/icons/video-library.svg"
+import removeIcon from "../assets/images/icons/remove.svg"
+
+
 
 import FavListVideoCover1 from "../assets/images/Personal_Page_Fav/FavListVideoCover_1.svg"
 import FavListVideoCover2 from "../assets/images/Personal_Page_Fav/FavListVideoCover_2.svg"
@@ -55,9 +60,6 @@ function CreatePlaylistForm({ onCloseModal }) {
     }
   }
 
-
-
-
   return (
     <div className="p-6 text-neutral-100">
       <h2 className="text-h6 text-neutral-100 mb-xl">建立新播放清單</h2>
@@ -82,7 +84,27 @@ function CreatePlaylistForm({ onCloseModal }) {
       </div>
     </div>
   );
+};
+
+function PlaylistMenu({ onCloseModal }) {
+  return(
+    <div className="playlist-menu">
+      <div className="menu-item">
+        <img src={menuEditIcon} alt="edit" />
+        <span>編輯</span>
+      </div>
+      <div className="menu-item">
+        <img src={videoLibraryIcon} alt="add" />
+        <span>新增</span>
+      </div>
+      <div className="menu-item">
+        <img src={removeIcon} alt="remove" />
+        <span>刪除</span>
+      </div>
+    </div>
+  )
 }
+
 
 
 function FavoriteItem() {
@@ -113,9 +135,20 @@ function FavoriteItem() {
                   <div className="col-2 text-neutral-100">
                     <div className="flex justify-between items-center mb-xs">
                       <h2 className="text-md-xl text-l font-bold">電影</h2>
-                      <Button>
-                        <img src={btnListMore} alt="more" />
-                      </Button>
+                      <Modal>
+                        <Modal.Open opens="playlist-menu">
+                          <Button>
+                            <img src={btnListMore} alt="more" />
+                          </Button>
+                        </Modal.Open>
+                        <Modal.Window 
+                          name="playlist-menu"
+                          styledModalCustomClass="bottom-sheet"
+                          needCloseBtn={false}
+                        >
+                            <PlaylistMenu></PlaylistMenu>
+                        </Modal.Window>
+                      </Modal>
                     </div>
                     <p className="text-xs text-md-s">看完整清單</p>
                   </div>
