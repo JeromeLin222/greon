@@ -9,6 +9,7 @@ import Film from "./pages/Film";
 import Category from "./pages/Category";
 import History from "./pages/History";
 import AddFilm from "./pages/AddFilm";
+import CollectFilmList from "./pages/CollectFilmList";
 import UsageTutorial from "./pages/UsageTutorial";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route index element={<Navigate replace to="favorite" />} />
             <Route path="favorite" element={<FavoriteItem />} />
             <Route path="add-film" element={<AddFilm />} />
+            <Route path="collect-film-list" element={<CollectFilmList />} />
           </Route>
         </Route>
         <Route path="app/usage-tutorial" element={<UsageTutorial />} />
