@@ -3423,6 +3423,10 @@ img {
   }
 }
 
+.border-radius-1000 {
+  border-radius: 1000px;
+}
+
 /* 只要有用到 AppHeader的頁面，都須 margin-top: App-header高度 */
 /* 若有異動 AppHeader元件，都須再次確認 margin-top: App-header高度 */
 .mt-app-header {

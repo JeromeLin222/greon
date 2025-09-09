@@ -1,0 +1,22 @@
+.fullscreen-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg); /* 先置中，再旋轉 */
+  transform-origin: center center;
+  width: 100vh; /* 旋轉後的寬高要對調 */
+  height: 100vw;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .fullscreen-img {
+    transform: none; /* 不旋轉 */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}

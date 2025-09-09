@@ -16,10 +16,10 @@ function App() {
     <HashRouter>
       <Routes>
         <Route index element={<Home />} />
+        <Route path="film" element={<Film />} />
         <Route path="app" element={<AppLayout />}>
           <Route index element={<Navigate replace to="home" />} />
           <Route path="home" element={<AppHome />} />
-          <Route path="home/film" element={<Film />} />
           <Route path="category" element={<Category />} />
           <Route path="history" element={<History />} />
           <Route path="playlist/:playlistName" element={<PlaylistDetail />} />

@@ -1,0 +1,126 @@
+.film-play-time {
+  left: 8px;
+  bottom: 8px;
+}
+
+.film-total-time-text {
+  color: #f5f5f599;
+}
+
+.film-arrow-left {
+  width: 24px;
+  height: 24px;
+  top: 8px;
+  left: 8px;
+  cursor: pointer;
+}
+
+.film-progress-bar {
+  bottom: 0px;
+  left: 0px;
+}
+
+.film-playing-icon {
+  width: 12px;
+  height: 12px;
+  bottom: -8px;
+  left: 55%;
+  cursor: pointer;
+}
+
+.film-title {
+  font-size: 20px;
+}
+
+.film-tag-border {
+  border: 1px solid #44a40c;
+}
+
+.like-green-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.film-tab-width {
+  width: 33.333333%;
+}
+
+.film-tab-border-bottom {
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.film-tab-active-border-bottom {
+  border-bottom: 3px solid #58975b;
+}
+
+.series-gap {
+  gap: 10px;
+}
+
+.series-padding {
+  padding-block: 10px;
+  padding-inline: 11px;
+}
+
+.series-border {
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+}
+
+.arrow-down-icon {
+  width: 10px;
+  height: 5px;
+}
+
+@media (min-width: 768px) {
+  .film-play-time {
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .film-playing-icon {
+    width: 32px;
+    height: 32px;
+    bottom: -22px;
+    left: 55%;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1194px) {
+  .film-play-time {
+    left: 24px;
+    bottom: 24px;
+  }
+
+  .film-arrow-left {
+    width: 36px;
+    height: 36px;
+    top: 12px;
+    left: 12px;
+  }
+
+  .film-playing-icon {
+    width: 48px;
+    height: 48px;
+    bottom: -32px;
+    left: 55%;
+    cursor: pointer;
+  }
+
+  .film-title {
+    font-size: 32px;
+  }
+
+  .like-icon,
+  .share-icon,
+  .plus-list-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .arrow-down-icon {
+    width: 14px;
+    height: 7px;
+  }
+}

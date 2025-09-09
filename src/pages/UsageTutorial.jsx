@@ -1,8 +1,12 @@
+import player from "../assets/images/Player/Player.svg";
+
+import "./UsageTutorial.css";
+
 function UsageTutorial() {
   return (
     <>
-      <div className="text-h6 text-info-500 text-center mt-app-header">
-        使用教學頁面，開發中，敬請期待😊
+      <div className="relative w-screen h-screen overflow-hidden">
+        <img src={player} alt="player" className="fullscreen-img" />
       </div>
     </>
   );
