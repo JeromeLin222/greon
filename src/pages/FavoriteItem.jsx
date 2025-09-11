@@ -62,7 +62,7 @@ function CreatePlaylistForm({ onCloseModal }) {
 
   return (
     <div className="p-6 text-neutral-100">
-      <h2 className="text-h6 text-neutral-100 mb-xl">建立新播放清單</h2>
+      <h2 className="text-h6 text-neutral-100 mb-m">建立新播放清單</h2>
       <div className="input-container">
         <input 
           type="text" 
