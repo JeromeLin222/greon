@@ -62,7 +62,7 @@ function CreatePlaylistForm({ onCloseModal }) {
 
   return (
     <div className="p-6 text-neutral-100">
-      <h2 className="text-h6 text-neutral-100 mb-xl">建立新播放清單</h2>
+      <h2 className="text-h6 text-neutral-100 mb-m">建立新播放清單</h2>
       <div className="input-container">
         <input 
           type="text" 
@@ -80,7 +80,7 @@ function CreatePlaylistForm({ onCloseModal }) {
       </div>
       <div className="gap-m flex">
         <Button otherClass="flex-1 bg-neutral-100 py-xs py-md-s pill-rounded" onClick={onCloseModal}>取消</Button>
-        <Button otherClass={`flex-1 bg-neutral-100 py-xs py-md-s pill-rounded btn-create ${(isFocused || hasValue) ? 'activate' : ''}`} onClick={handleSubmit} >建立</Button>
+        <Button otherClass={`flex-1 bg-neutral-100 py-xs py-md-s pill-rounded btn-create ${(isFocused || hasValue) ? 'activate' : 'bg-neutral-400 text-neutral-900'}`} onClick={handleSubmit} isDisabled={!playlistName.trim()}>建立</Button>
       </div>
     </div>
   );
@@ -145,6 +145,7 @@ function FavoriteItem() {
                           name="playlist-menu"
                           styledModalCustomClass="bottom-sheet"
                           needCloseBtn={false}
+                          showOverlay={false}
                         >
                             <PlaylistMenu></PlaylistMenu>
                         </Modal.Window>
