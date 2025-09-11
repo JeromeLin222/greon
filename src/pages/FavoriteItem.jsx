@@ -80,7 +80,7 @@ function CreatePlaylistForm({ onCloseModal }) {
       </div>
       <div className="gap-m flex">
         <Button otherClass="flex-1 bg-neutral-100 py-xs py-md-s pill-rounded" onClick={onCloseModal}>取消</Button>
-        <Button otherClass={`flex-1 bg-neutral-100 py-xs py-md-s pill-rounded btn-create ${(isFocused || hasValue) ? 'activate' : ''}`} onClick={handleSubmit} >建立</Button>
+        <Button otherClass={`flex-1 bg-neutral-100 py-xs py-md-s pill-rounded btn-create ${(isFocused || hasValue) ? 'activate' : 'bg-neutral-400 text-neutral-900'}`} onClick={handleSubmit} isDisabled={!playlistName.trim()}>建立</Button>
       </div>
     </div>
   );
