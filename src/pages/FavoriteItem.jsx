@@ -145,6 +145,7 @@ function FavoriteItem() {
                           name="playlist-menu"
                           styledModalCustomClass="bottom-sheet"
                           needCloseBtn={false}
+                          showOverlay={false}
                         >
                             <PlaylistMenu></PlaylistMenu>
                         </Modal.Window>

@@ -39,6 +39,7 @@ function Window({
   needCloseBtn = true,
   overlayCustomClass,
   styledModalCustomClass,
+  showOverlay = true,
 }) {
   const { openName, close } = useContext(ModalContext);
   const ref = useOutsideClick(close);
@@ -46,19 +47,31 @@ function Window({
   if (name !== openName) return null;
 
   return createPortal(
-    <Overlay overlayCustomClass={overlayCustomClass}>
+    showOverlay ? (
+      <Overlay overlayCustomClass={overlayCustomClass}>
+        <StyledModal ref={ref} styledModalCustomClass={styledModalCustomClass}>
+          {needCloseBtn && (
+            <Button onClick={close}>
+              <span className="material-symbols-rounded absolute close-btn-position text-neural-100">
+                close
+              </span>
+            </Button>
+          )}
+          <div>{cloneElement(children, { onCloseModal: close })}</div>
+        </StyledModal>
+      </Overlay>
+    ) : (
       <StyledModal ref={ref} styledModalCustomClass={styledModalCustomClass}>
         {needCloseBtn && (
           <Button onClick={close}>
-            <span className="material-symbols-rounded absolute close-btn-position text-neutral-100">
+            <span className="material-symbols-rounded absolute close-btn-position text-neural-100">
               close
             </span>
           </Button>
         )}
-
         <div>{cloneElement(children, { onCloseModal: close })}</div>
       </StyledModal>
-    </Overlay>,
+    ),
     document.body
   );
 }
